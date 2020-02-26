@@ -1,16 +1,9 @@
 package codekata.driver;
 
-import codekata.service.CompoundNumberConverter;
-import codekata.service.DefaultConverter;
-import codekata.service.SimpleNumberConverter;
-import java.util.Arrays;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import static codekata.service.NumberConverter.BUZZ;
-import static codekata.service.NumberConverter.FIZZ;
-import static codekata.service.NumberConverter.FIZZ_BUZZ;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -20,11 +13,7 @@ public class FizzBuzzDriverTest {
 
     @Before
     public void setUp() {
-        DefaultConverter defaultConverter = new DefaultConverter();
-        SimpleNumberConverter fizzConverter = new SimpleNumberConverter(defaultConverter, 3, FIZZ);
-        SimpleNumberConverter buzzConverter = new SimpleNumberConverter(fizzConverter, 5, BUZZ);
-        CompoundNumberConverter compoundConverter = new CompoundNumberConverter(buzzConverter, Arrays.asList(5, 3), FIZZ_BUZZ);
-        fizzBuzzDriver = new FizzBuzzDriver(compoundConverter);
+        fizzBuzzDriver = new FizzBuzzDriver();
     }
 
     @Test

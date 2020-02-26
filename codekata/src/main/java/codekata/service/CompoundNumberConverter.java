@@ -1,7 +1,7 @@
 package codekata.service;
 
-import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -10,7 +10,7 @@ public class CompoundNumberConverter implements NumberConverter {
     private final Set<Integer> divisors = new HashSet<>();
     private final String output;
 
-    public CompoundNumberConverter(NumberConverter delegate, Collection<Integer> divisors, String output) {
+    public CompoundNumberConverter(NumberConverter delegate, List<Integer> divisors, String output) {
         Objects.requireNonNull(delegate, "Delegate transformer must be provided");
         Objects.requireNonNull(divisors, "divisors must be provided");
         Objects.requireNonNull(output, "output transformer must be provided");
